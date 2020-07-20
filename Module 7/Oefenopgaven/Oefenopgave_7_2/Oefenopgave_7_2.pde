@@ -1,6 +1,6 @@
 //Oefenopgave_7_2
 
-String[] groceries = {"test", "Test", "Blah", "lotsmore"};
+String[] groceries = {"1st on list", "2nd on list", "Blah", "lotsmore"};
 
 void setup(){
   showOnScreen(groceries);

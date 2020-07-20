@@ -1,32 +1,27 @@
 //Oefenopgave_7_3
 
-/* Goal here is to write a method/function that only picks the top 5/ or in 
- this case the first 5 of an array. 
- So I am going to create a function that will have a string array as its
- parameter 
+/*
+ I have to print two lists of the top 5 of boys names and the top 5 of girls names.
  */
 
-//Oefenopgave_7_2
+//Oefenopgave_7_3
 
-String[] groceries = {"test", "Test", "Blah", "lotsmore", "five", "six"};
+//lists: 
+String[] boys = {"Liam", "Sem", "Lucas", "Luuk", "Noah", "Peter", "Kim"};
+String[] girls = {"Emma", "Julia", "Sophie", "Anna", "Mila", "Kim", "Sytzke"};
 
 void setup() {
-  showOnScreen(1, groceries);
+  listOnScreen("Jongens", boys, 5);
+  listOnScreen("Girls", girls, -1);
 }
 
-void showOnScreen(int topZoveel, String[] showThis) {
-  if (topZoveel > showThis.length || topZoveel < 0) {
-    println("Error Out Of Bounds");
-  } 
-  else {
-    for (int i = 0; i < topZoveel; i++) {
-      println(showThis[i]);
+void listOnScreen(String listHeader, String[] list, int listSize) {
+  if (listSize > list.length || listSize < 0) {
+    println("Error: Out Of Bounds");
+  } else {
+    println("Top 5", listHeader + ":");
+    for (int i = 0; i < listSize; i++) {
+      println(str(i+1) + ":", list[i]);
     }
   }
 }
-
-/*
-I believe the goal of this exercise was to have me combine functions, for loops,
- and String Arrays.
- I basically made a/the printArray function here.
- */
