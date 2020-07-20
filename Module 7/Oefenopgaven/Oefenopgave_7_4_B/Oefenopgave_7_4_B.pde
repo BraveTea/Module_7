@@ -45,8 +45,9 @@ boolean isMouseOnCircle(int[] xy){
   int y = xy[1];
   int sensitivity = RADIUS;
   
-  return ( mouseWithinXBounds(x, sensitivity) && mouseWithinYBounds(y, sensitivity));
+  return (mouseWithinXBounds(x, sensitivity) && mouseWithinYBounds(y, sensitivity));
 }
+
 
 boolean mouseWithinXBounds(int x, int sensitivity){
   return (mouseX > x - sensitivity && mouseX < x + sensitivity);
