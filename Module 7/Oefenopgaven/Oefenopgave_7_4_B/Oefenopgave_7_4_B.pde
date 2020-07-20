@@ -8,42 +8,50 @@ final int RED = #FF0000;
 void setup() {
   size(200, 200);
   ellipseMode(CENTER);
-  println(circles[0].length);
+  
 }
 
 void draw() {
   background(#000000);
   drawCircles(circles);
-  //isMouseOnCircle();
+  drawCircleUnderMouse(circles);
 }
 
-// DO NOT ALTER CODE ABOVE THIS COMMENT
+// my test code
 
-void drawCircles(int[][] Arr) {
-  
-  for (int i = 0; i < Arr.length; i++) {
-    circle(Arr[i][0], Arr[i][1], DIAMETER);
+
+// My code
+
+final int RADIUS = DIAMETER/2;
+
+void drawCircles(int[][] array) {
+  for (int i= 0; i < array.length; i++) {
+    fill(YELLOW);
+    circle(array[i][0], array[i][1], DIAMETER);
   }
-  for (int i = 0; i < 6; i++) {
-    if (mouseX < circles[i][0]+DIAMETER/2 && mouseX > circles[i][0]-DIAMETER/2 && mouseY < circles[i][1]+DIAMETER/2 && mouseY > circles[i][1] - DIAMETER/2) {
+}
+
+void drawCircleUnderMouse(int [][] array) {
+  for (int i = 0; i < array.length; i++) {
+    if (isMouseOnCircle(array[i])) {
       fill(RED);
-      println("YES");
-    }
-    else {
-      fill(YELLOW);
-      println("NO");
+      circle(array[i][0], array[i][1], DIAMETER);
     }
   }
 }
 
-//test function
-void isMouseOnCircle() {
-  for (int i = 0; i < 6; i++) {
-    if (mouseX < circles[i][0]+DIAMETER/2 && mouseX > circles[i][0]-DIAMETER/2 && mouseY < circles[i][1]+DIAMETER/2 && mouseY > circles[i][1] - DIAMETER/2) {
-      println("YES");
-    }
-    else {
-      println("NO");
-    }
-  }
+boolean isMouseOnCircle(int[] xy){
+  int x = xy[0];
+  int y = xy[1];
+  int sensitivity = RADIUS;
+  
+  return ( mouseWithinXBounds(x, sensitivity) && mouseWithinYBounds(y, sensitivity));
+}
+
+boolean mouseWithinXBounds(int x, int sensitivity){
+  return (mouseX > x - sensitivity && mouseX < x + sensitivity);
+}
+
+boolean mouseWithinYBounds(int y, int sensitivity){
+  return (mouseY > y - sensitivity && mouseY < y + sensitivity);
 }
