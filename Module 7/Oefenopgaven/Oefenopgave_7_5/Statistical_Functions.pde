@@ -7,7 +7,7 @@ float returnMaxWithMax(float[] array){
 
 
 float returnMaxArray(float[] array){
-  float test = -Float.MAX_VALUE; //although not sure, I think this is the lowest possible value that can be stored in a float
+  float test = -Float.MAX_VALUE; 
   for (int i = 0; i < array.length; i++){
     if (array[i] > test){
       test = array[i];
@@ -20,7 +20,7 @@ float returnMaxArray(float[] array){
 }
 
 float returnMinArray(float[] array){
-  float test = Float.MAX_VALUE; //although not sure, I think this is the highest possible value that can be stored in a float
+  float test = Float.MAX_VALUE; 
   for (int i = 0; i < array.length; i++){
     if (array[i] < test){
       test = array[i];
