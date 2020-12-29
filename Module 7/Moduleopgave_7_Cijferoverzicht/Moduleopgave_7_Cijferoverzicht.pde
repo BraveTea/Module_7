@@ -1,5 +1,12 @@
 //Moduleopgave_7_Cijferoverzicht
 
+// I have decided to stop working on this case.
+// Right now it will cost me so much effort to get back into the mindset
+// that I am better off by just starting work on a new case.
+// this will get me back into programming instead of frustrating me endlessly.
+// Right now it feels like I have to start this code completely from scratchh
+// in order to get it working.. Not a great form of inspiration.
+
 
 void setup() {
   size(600, 500);
@@ -17,6 +24,15 @@ void setup() {
   textBoxStatistics(marks);
   graphBarsBG();
   drawSingleGraphBar(0.0, 1.0, marks);
+  drawSingleGraphBar(1.0, 2.0, marks);
+  drawSingleGraphBar(2.0, 3.0, marks);
+  drawSingleGraphBar(3.0, 4.0, marks);
+  drawSingleGraphBar(4.0, 5.0, marks);
+  drawSingleGraphBar(5.0, 6.0, marks);
+  drawSingleGraphBar(6.0, 7.0, marks);
+  drawSingleGraphBar(7.0, 8.0, marks);
+  drawSingleGraphBar(8.0, 9.0, marks);
+  drawSingleGraphBar(9.0, 10.0, marks);
   
 }
 
@@ -24,9 +40,15 @@ void draw() {
   
 }
 
+/* I need to write some sort of if-statement that says: if biggest amountInRange() 
+exceeds the height of the grey rectangle then scale it back so it fits. And
+this needs to be so it also works the other way around. So if the bars are 
+too small, or too low, it will enlarge them in such a way these fit nicely.
+*/
 void drawSingleGraphBar(float min, float max, float[] array){
   fill(#00FF00);
-  rect(35,350+115, 53, -amountInRange(min,max,array)*40);//the 40 is just to being able to see it at all, it has nothing to do with any calculations. //the 350 + 115 is magical now because of not knowing the coordinates of the grey rect. 
+  //rect(35,350+115, 53, -amountInRange(min,max,array)*40);//the 40 is just to being able to see it at all, it has nothing to do with any calculations. //the 350 + 115 is magical now because of not knowing the coordinates of the grey rect. 
+  rect(35+(min*53), 350+115, 53, -amountInRange(min,max,array)*2.0); //see changes and notes in the line I commented out right above here
 }
 
 /* I need to give the measurements of the rect() below (35,115,530,350) non
